@@ -138,11 +138,17 @@ a = c;
 //     };
 // }
 // const circle = createCircle(1);
-function Circle(radius){
-    this.radius = radius;
-    this.draw = function(){
-        console.log('DRAW');
-    }
+// function Circle(radius){
+//     this.radius = radius;
+//     this.draw = function(){
+//         console.log('DRAW');
+//     }
+// }
+// const circle = new Circle(1);
+// console.log(circle);
+let obj = {value: 10};
+function increaseValue(obj){
+    obj.value++;
 }
-const circle = new Circle(1);
-console.log(circle);
+increaseValue(obj);
+console.log(obj);
