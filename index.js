@@ -117,17 +117,17 @@ a = c;
 //     if (width >= he)
 // }
 
-// const circle = {
-//     radius : 1,
-//     location : {
-//         x: 1,
-//         y: 1
-//     },
-//     isVisible : true,
-//     draw : function(){
-//         console.log('DRAW');
-//     }
-// };
+const circle = {
+    radius : 1,
+    location : {
+        x: 1,
+        y: 1
+    },
+    isVisible : true,
+    draw : function(){
+        console.log('DRAW');
+    }
+};
 // circle.draw(); // Method
 // function createCircle(radius){
 //     return{
@@ -146,9 +146,12 @@ a = c;
 // }
 // const circle = new Circle(1);
 // console.log(circle);
-let obj = {value: 10};
-function increaseValue(obj){
-    obj.value++;
-}
-increaseValue(obj);
-console.log(obj);
+// let obj = {value: 10};
+// function increaseValue(obj){
+//     obj.value++;
+// }
+// increaseValue(obj);
+// console.log(obj);
+for (let x in circle){
+    console.log(x, circle[x]);
+};
