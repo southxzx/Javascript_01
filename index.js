@@ -116,3 +116,33 @@ a = c;
 // function isLandScape(width, height){
 //     if (width >= he)
 // }
+
+// const circle = {
+//     radius : 1,
+//     location : {
+//         x: 1,
+//         y: 1
+//     },
+//     isVisible : true,
+//     draw : function(){
+//         console.log('DRAW');
+//     }
+// };
+// circle.draw(); // Method
+// function createCircle(radius){
+//     return{
+//         radius,
+//         draw(){
+//             console.log('DRAW');
+//         }
+//     };
+// }
+// const circle = createCircle(1);
+function Circle(radius){
+    this.radius = radius;
+    this.draw = function(){
+        console.log('DRAW');
+    }
+}
+const circle = new Circle(1);
+console.log(circle);
