@@ -252,3 +252,122 @@ function Address(street,city,zipcode){
 // }
 
 //Ex6
+//...
+
+// let numbers2 = [1,2,3,1,4];
+let numbers = [];
+// console.log(numbers.indexOf('a'));
+// console.log(numbers.lastIndexOf(1) !== -1);
+// console.log(numbers.includes(1));
+// Holding Shift+Alt+Down to duplicate line
+// const courses = [
+//     {id: 1, name: 'a'},
+//     {id: 2, name: 'b'}
+// ];
+// const course =  courses.findIndex(course => course.name === 'a');
+// console.log(course);
+
+numbers.push(); //Add to the end of an array
+numbers.pop();
+
+numbers.unshift(); //Add to the beginning of an array
+numbers.shift();
+
+numbers.splice(); //Add to the an array at somewhere in the middle
+// console.log(numbers2.splice(2,2));
+
+//Emptying an array we have 4 solutions below
+// numbers2 = [];
+// numbers2.length = 0;
+// numbers2.splice(0,numbers2.length);
+// while(numbers2.length > 0){ // Dont Reccommend
+//     numbers2.pop();
+// }
+
+let first = [1,2,3];
+let second = [4,5,6];
+// let combined = first.concat(second);
+let combined = [...first,...second];
+// let slice = combined.slice(2,4); // Beginning - Ending
+// console.log(combined);
+// console.log(slice);
+// numbers2.forEach((numbers2, index) => console.log(index,numbers2));
+// let numbers2 = [1,2,3,1,4];
+// let joined = numbers2.join(',');
+// console.log(joined)
+// let message = 'Tôi là Nam Đại Nhân';
+// let splited = message.split(' ');
+// console.log(splited);
+// console.log(splited.join(' '));
+
+//SORT
+// let numbers2 = [1,2,3,1,4,-5];
+// console.log(numbers2.sort());
+// console.log(numbers2.reverse());
+// const atLeastOnePositive = numbers2.some(value => value >= 0);
+
+// const result = numbers2
+//     .filter(value => value >= 0)
+//     .map(n => ({value: n}))
+//     .filter(x => x.value > 2)
+//     .map(obj => obj.value);
+
+// const item = numbers2.map(n => '<li>' + n + '</li>');
+// const item2 = numbers2.map(n => ({value: n}));
+// const html = '<ul>' + item.join('') + '</ul>';
+// console.log(result);
+// console.log(atLeastOnePositive);
+
+// const courses = [
+//     {id: 1, name: 'NodeJS'},
+//     {id: 2, name: 'Javascript'}
+// ];
+// courses.sort(function(a,b){
+//     let name1 = a.name.toLowerCase();
+//     let name2 = b.name.toLowerCase();
+//     if (name1 < name2) return -1;
+//     if (name1 > name2) return 1;
+//     return 0;
+// })
+// console.log(courses);
+
+// let numbers2 = [1,2,3,1,4,-5];
+// let sum = numbers2.reduce(function(s,currentValue){
+//     return s + currentValue;
+// },0);
+// console.log(sum);
+
+//EX1
+// result = arrayFromRange(1,4);
+// console.log(result);
+// function arrayFromRange(min,max){
+//     let numbers = [];
+//     numbers.push(min);
+//     while (numbers[numbers.length-1] < max){
+//         min++;
+//         numbers.push(min);
+//     };
+//     return numbers;
+// }
+
+//EX2
+let numbers2 = [1,2,3,1,4,-5];
+// function includes(array, searchElement){
+//     for (let i=0;i<array.length;i++){
+//         if (i === searchElement) return true;
+//     };
+//     return false;
+// };
+// let result = includes(numbers2,7);
+// console.log(result);
+
+//EX3
+// function except(array, included){
+//     let newArray = array;
+//     for (let j=0;j<included.length;j++){ 
+//             newArray = newArray.filter(v => v != included[j]);
+//     };
+//     return newArray;
+// }
+// const output = except(numbers2,[]);
+// console.log(output);
