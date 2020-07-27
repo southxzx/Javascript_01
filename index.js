@@ -273,7 +273,8 @@ numbers.pop();
 numbers.unshift(); //Add to the beginning of an array
 numbers.shift();
 
-numbers.splice(); //Add to the an array at somewhere in the middle
+// numbers.splice(startNumber, amountElementWantToDel/0, numberWantToAdd); 
+//Add to the an array at somewhere in the middle
 // console.log(numbers2.splice(2,2));
 
 //Emptying an array we have 4 solutions below
@@ -340,34 +341,117 @@ let combined = [...first,...second];
 //EX1
 // result = arrayFromRange(1,4);
 // console.log(result);
-// function arrayFromRange(min,max){
-//     let numbers = [];
-//     numbers.push(min);
-//     while (numbers[numbers.length-1] < max){
-//         min++;
-//         numbers.push(min);
-//     };
-//     return numbers;
-// }
+function arrayFromRange(min,max){
+    let numbers = [];
+    numbers.push(min);
+    while (numbers[numbers.length-1] < max){
+        min++;
+        numbers.push(min);
+    };
+    return numbers;
+}
 
 //EX2
-let numbers2 = [1,2,3,1,4,-5];
-// function includes(array, searchElement){
-//     for (let i=0;i<array.length;i++){
-//         if (i === searchElement) return true;
-//     };
-//     return false;
-// };
+// let numbers2 = [1,2,3,1,4,-5];
+function includes(array, searchElement){
+    for (let i=0;i<array.length;i++){
+        if (i === searchElement) return true;
+    };
+    return false;
+};
 // let result = includes(numbers2,7);
 // console.log(result);
 
 //EX3
-// function except(array, included){
-//     let newArray = array;
-//     for (let j=0;j<included.length;j++){ 
-//             newArray = newArray.filter(v => v != included[j]);
-//     };
-//     return newArray;
-// }
+function except(array, included){
+    let newArray = array;
+    for (let j=0;j<included.length;j++){ 
+            newArray = newArray.filter(v => v != included[j]);
+    };
+    return newArray;
+}
 // const output = except(numbers2,[]);
 // console.log(output);
+
+//EX4
+// let numbers2 = [1,2,3,4];
+function move(array,index,offset){
+    if (offset+index >= array.length || offset+index < 0){
+        console.error('Invalid Offset');
+    }
+    else{
+        let newArray = [...array];
+        let x = newArray.splice(index,1)[0];
+        newArray.splice(index+offset,0,x);
+        return newArray;
+    }
+}
+// let result = move(numbers2,1,-1);
+// console.log(result);
+
+//EX5
+// let numbers2 = [1,2,3,4,1];
+function countOccurences(array,searchElement){
+    let newArray = [];
+    for (let x of array){
+        if (x === searchElement){
+            newArray.push(x);
+        }
+    }
+    let result = newArray.reduce(function(accumulator,currentvalue){
+        return accumulator + currentvalue;
+    },0);
+    return result;
+}
+// const count = countOccurences(numbers2,1);
+// console.log(count);
+
+//EX6
+// let numbers2 = [1,2,3,4,1];
+function getMax(array){
+    // let result = array[0];
+    // for (let x in array){
+    //     if (x > result) result = x;
+    // }
+    // return result;
+    let result = array.reduce(function(accumulator,currentValue){
+        return (currentValue > accumulator) ? currentValue : accumulator;
+    },array[0]);
+    return result;
+}
+// const max = getMax(numbers2);
+// console.log(max);
+
+//EX7
+const movie = [
+    { title:'a', year:2018, rating:4.5},
+    { title:'b', year:2018, rating:4.7},
+    { title:'c', year:2018, rating:3.0},
+    { title:'d', year:2017, rating:4.5},
+    { title:'e', year:2019, rating:4.2}
+];
+const result = movie
+    .filter(m => m.year >= 2018 && m.rating > 4)
+    .sort((a,b) => a.rating - b.rating)
+    .reverse()
+    .map(t => t.title);
+// console.log(result);
+// let newMovie = [];
+// let newMovie2 = [];
+// for (let x of movie){
+//     if (x['year'] === 2018 && x['rating'] > 4){
+//         newMovie.push(x);
+//     }
+// }
+// for (let x of newMovie){
+//     let flag = newMovie[0]['rating'];
+//     if (x['rating'] > flag){
+//         newMovie2.unshift(x);
+//     }
+//     else{
+//         newMovie2.push(x);
+//     }
+// }
+// for (let x of newMovie2){
+//     console.log(x['title']);
+// }
