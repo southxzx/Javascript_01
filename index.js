@@ -390,21 +390,21 @@ function move(array,index,offset){
 // console.log(result);
 
 //EX5
-// let numbers2 = [1,2,3,4,1];
-function countOccurences(array,searchElement){
-    let newArray = [];
-    for (let x of array){
-        if (x === searchElement){
-            newArray.push(x);
-        }
-    }
-    let result = newArray.reduce(function(accumulator,currentvalue){
-        return accumulator + currentvalue;
-    },0);
-    return result;
-}
-// const count = countOccurences(numbers2,1);
-// console.log(count);
+// // let numbers2 = [1,2,3,4,1];
+// function countOccurences(array,searchElement){
+//     let newArray = [];
+//     for (let x of array){
+//         if (x === searchElement){
+//             newArray.push(x);
+//         }
+//     }
+//     let result = newArray.reduce(function(accumulator,currentvalue){
+//         return accumulator + currentvalue;
+//     },0);
+//     return result;
+// }
+// // const count = countOccurences(numbers2,1);
+// // console.log(count);
 
 //EX6
 // let numbers2 = [1,2,3,4,1];
@@ -455,3 +455,97 @@ const result = movie
 // for (let x of newMovie2){
 //     console.log(x['title']);
 // }
+
+//FUNCTION DECLARE EXPRESSION
+// let run = function(){
+//     console.log('RUN');
+// };
+// let walk = run;
+// run();
+// walk();
+// function sum(discount, ...price){
+//     // let s = 0;
+//     // for (let value of arguments){
+//     //     s += value;
+//     // }
+//     // return s;
+//     let total = price.reduce((a,b)=>a+b);
+//     return total * (1-discount);
+// }
+// console.log(sum(0.1,2,3,4,5));
+
+//GET SET
+// let person = {
+//     firstName: 'Nam',
+//     lastName: 'Dang',
+//     get fullName(){
+//         return `${person.firstName} ${person.lastName}`;
+//     },
+//     set fullName(value){
+//         if (typeof value !== 'string'){
+//             throw new Error('Value is not a string!');
+//         }
+//         const part = value.split(' ');
+//         if (part.length !== 2){
+//             throw new Error('Plz enter both first and lastname!');
+//         }
+//         this.firstName = part[0];
+//         this.lastName = part[1];
+//     }
+
+// }
+// try{
+//     person.fullName = 'Aaron';
+// }
+// catch(e){
+//     alert(e);
+// }
+// console.log(person.fullName);
+
+//EX1
+// function sum(...numbers){
+//     if (Array.isArray(numbers[0])){
+//         numbers = [...numbers[0]];
+//     }
+//     let s = numbers.reduce((a,b) => a + b);
+//     return s;
+// }
+// console.log(sum([1,2,3]));
+
+//EX2
+// let circle2 = {
+//     radius: 2,
+//     get area(){
+//         return this.radius * this.radius * Math.PI;
+//     }
+// }
+// // circle.radius(4);
+// console.log(circle2.area);
+
+//EX3
+function countOccurences(array,searchElement){
+    if (!Array.isArray[array]){
+        throw new Error('Invalid Array');
+        return;
+    }
+    let newArray = [];
+    for (let x of array){
+        if (x === searchElement){
+            newArray.push(x);
+        }
+    }
+    let result = newArray.reduce(function(accumulator,currentvalue){
+        return accumulator + currentvalue;
+    },0);
+    return result;
+}
+try{
+    // let numbers2 = [1,2,3,4,1];
+    let numbers2 = true;
+    const count = countOccurences(numbers2,1);
+    console.log(count);
+}
+catch(e){
+    // alert(e);
+    console.log(e.message);
+}
