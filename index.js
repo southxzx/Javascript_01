@@ -25,8 +25,8 @@
 // // greet('Nam', 'Dang');
 
 /* OPERATORS */
-let x = 3;
-let y = 10;
+// let x = 3;
+// let y = 10;
 // console.log(x+y);
 // console.log(--x);
 // console.log(x>=2);
@@ -65,12 +65,12 @@ let y = 10;
 // console.log(message);
 
 /*EXERCISE */
-let a = 'red';
-let b = 'blue';
+// let a = 'red';
+// let b = 'blue';
 
-let c = b;
-b = a;
-a = c;
+// let c = b;
+// b = a;
+// a = c;
 
 // console.log(a);
 // console.log(b);
@@ -117,17 +117,17 @@ a = c;
 //     if (width >= he)
 // }
 
-const circle = {
-    radius : 1,
-    location : {
-        x: 1,
-        y: 1
-    },
-    isVisible : true,
-    draw : function(){
-        console.log('DRAW');
-    }
-};
+// const circle = {
+//     radius : 1,
+//     location : {
+//         x: 1,
+//         y: 1
+//     },
+//     isVisible : true,
+//     draw : function(){
+//         console.log('DRAW');
+//     }
+// };
 // circle.draw(); // Method
 // function createCircle(radius){
 //     return{
@@ -138,12 +138,12 @@ const circle = {
 //     };
 // }
 // const circle = createCircle(1);
-function Circle(radius){
-    this.radius = radius;
-    this.draw = function(){
-        console.log('DRAW');
-    }
-}
+// function Circle(radius){
+//     this.radius = radius;
+//     this.draw = function(){
+//         console.log('DRAW');
+//     }
+// }
 // const circle = new Circle(1);
 // console.log(circle);
 // let obj = {value: 10};
@@ -163,10 +163,10 @@ function Circle(radius){
 // `I'm a little
 // 'monster' ${name}`;
 
-const now = new Date();
-const date1 = new Date('July 27 2020 08:12');
-const date2 = new Date(2020, 07, 27, 08, 13);
-now.setFullYear(2021);
+// const now = new Date();
+// const date1 = new Date('July 27 2020 08:12');
+// const date2 = new Date(2020, 07, 27, 08, 13);
+// now.setFullYear(2021);
 
 //Ex1
 // const address = {
@@ -194,16 +194,16 @@ now.setFullYear(2021);
 // }
 // let createAddress = address('Lê Văn Việt','HCMC',70000);
 //Constructor Function
-function Address(street,city,zipcode){
-    this.street = street;
-    this.city = city;
-    this.zipcode = zipcode;
-    // this.showAddress= function(){
-    //     console.log('Street:', this.street),
-    //     console.log('City', this.city),
-    //     console.log('Zip Code', this.zipcode)
-    // }
-}
+// function Address(street,city,zipcode){
+//     this.street = street;
+//     this.city = city;
+//     this.zipcode = zipcode;
+//     // this.showAddress= function(){
+//     //     console.log('Street:', this.street),
+//     //     console.log('City', this.city),
+//     //     console.log('Zip Code', this.zipcode)
+//     // }
+// }
 // let createAddress = new Address('Lê Văn Việt','HCMC',70000);
 // console.log(createAddress);
 
@@ -267,11 +267,11 @@ let numbers = [];
 // const course =  courses.findIndex(course => course.name === 'a');
 // console.log(course);
 
-numbers.push(); //Add to the end of an array
-numbers.pop();
+// numbers.push(); //Add to the end of an array
+// numbers.pop();
 
-numbers.unshift(); //Add to the beginning of an array
-numbers.shift();
+// numbers.unshift(); //Add to the beginning of an array
+// numbers.shift();
 
 // numbers.splice(startNumber, amountElementWantToDel/0, numberWantToAdd); 
 //Add to the an array at somewhere in the middle
@@ -285,10 +285,10 @@ numbers.shift();
 //     numbers2.pop();
 // }
 
-let first = [1,2,3];
-let second = [4,5,6];
+// let first = [1,2,3];
+// let second = [4,5,6];
 // let combined = first.concat(second);
-let combined = [...first,...second];
+// let combined = [...first,...second];
 // let slice = combined.slice(2,4); // Beginning - Ending
 // console.log(combined);
 // console.log(slice);
@@ -341,100 +341,100 @@ let combined = [...first,...second];
 //EX1
 // result = arrayFromRange(1,4);
 // console.log(result);
-function arrayFromRange(min,max){
-    let numbers = [];
-    numbers.push(min);
-    while (numbers[numbers.length-1] < max){
-        min++;
-        numbers.push(min);
-    };
-    return numbers;
-}
+// function arrayFromRange(min,max){
+//     let numbers = [];
+//     numbers.push(min);
+//     while (numbers[numbers.length-1] < max){
+//         min++;
+//         numbers.push(min);
+//     };
+//     return numbers;
+// }
 
 //EX2
 // let numbers2 = [1,2,3,1,4,-5];
-function includes(array, searchElement){
-    for (let i=0;i<array.length;i++){
-        if (i === searchElement) return true;
-    };
-    return false;
-};
+// function includes(array, searchElement){
+//     for (let i=0;i<array.length;i++){
+//         if (i === searchElement) return true;
+//     };
+//     return false;
+// };
 // let result = includes(numbers2,7);
 // console.log(result);
 
 //EX3
-function except(array, included){
-    let newArray = array;
-    for (let j=0;j<included.length;j++){ 
-            newArray = newArray.filter(v => v != included[j]);
-    };
-    return newArray;
-}
-// const output = except(numbers2,[]);
-// console.log(output);
+// function except(array, included){
+//     let newArray = array;
+//     for (let j=0;j<included.length;j++){ 
+//             newArray = newArray.filter(v => v != included[j]);
+//     };
+//     return newArray;
+// }
+// // const output = except(numbers2,[]);
+// // console.log(output);
 
-//EX4
-// let numbers2 = [1,2,3,4];
-function move(array,index,offset){
-    if (offset+index >= array.length || offset+index < 0){
-        console.error('Invalid Offset');
-    }
-    else{
-        let newArray = [...array];
-        let x = newArray.splice(index,1)[0];
-        newArray.splice(index+offset,0,x);
-        return newArray;
-    }
-}
-// let result = move(numbers2,1,-1);
-// console.log(result);
-
-//EX5
-// // let numbers2 = [1,2,3,4,1];
-// function countOccurences(array,searchElement){
-//     let newArray = [];
-//     for (let x of array){
-//         if (x === searchElement){
-//             newArray.push(x);
-//         }
+// //EX4
+// // let numbers2 = [1,2,3,4];
+// function move(array,index,offset){
+//     if (offset+index >= array.length || offset+index < 0){
+//         console.error('Invalid Offset');
 //     }
-//     let result = newArray.reduce(function(accumulator,currentvalue){
-//         return accumulator + currentvalue;
-//     },0);
+//     else{
+//         let newArray = [...array];
+//         let x = newArray.splice(index,1)[0];
+//         newArray.splice(index+offset,0,x);
+//         return newArray;
+//     }
+// }
+// // let result = move(numbers2,1,-1);
+// // console.log(result);
+
+// //EX5
+// // // let numbers2 = [1,2,3,4,1];
+// // function countOccurences(array,searchElement){
+// //     let newArray = [];
+// //     for (let x of array){
+// //         if (x === searchElement){
+// //             newArray.push(x);
+// //         }
+// //     }
+// //     let result = newArray.reduce(function(accumulator,currentvalue){
+// //         return accumulator + currentvalue;
+// //     },0);
+// //     return result;
+// // }
+// // // const count = countOccurences(numbers2,1);
+// // // console.log(count);
+
+// //EX6
+// // let numbers2 = [1,2,3,4,1];
+// function getMax(array){
+//     // let result = array[0];
+//     // for (let x in array){
+//     //     if (x > result) result = x;
+//     // }
+//     // return result;
+//     let result = array.reduce(function(accumulator,currentValue){
+//         return (currentValue > accumulator) ? currentValue : accumulator;
+//     },array[0]);
 //     return result;
 // }
-// // const count = countOccurences(numbers2,1);
-// // console.log(count);
-
-//EX6
-// let numbers2 = [1,2,3,4,1];
-function getMax(array){
-    // let result = array[0];
-    // for (let x in array){
-    //     if (x > result) result = x;
-    // }
-    // return result;
-    let result = array.reduce(function(accumulator,currentValue){
-        return (currentValue > accumulator) ? currentValue : accumulator;
-    },array[0]);
-    return result;
-}
 // const max = getMax(numbers2);
 // console.log(max);
 
 //EX7
-const movie = [
-    { title:'a', year:2018, rating:4.5},
-    { title:'b', year:2018, rating:4.7},
-    { title:'c', year:2018, rating:3.0},
-    { title:'d', year:2017, rating:4.5},
-    { title:'e', year:2019, rating:4.2}
-];
-const result = movie
-    .filter(m => m.year >= 2018 && m.rating > 4)
-    .sort((a,b) => a.rating - b.rating)
-    .reverse()
-    .map(t => t.title);
+// const movie = [
+//     { title:'a', year:2018, rating:4.5},
+//     { title:'b', year:2018, rating:4.7},
+//     { title:'c', year:2018, rating:3.0},
+//     { title:'d', year:2017, rating:4.5},
+//     { title:'e', year:2019, rating:4.2}
+// ];
+// const result = movie
+//     .filter(m => m.year >= 2018 && m.rating > 4)
+//     .sort((a,b) => a.rating - b.rating)
+//     .reverse()
+//     .map(t => t.title);
 // console.log(result);
 // let newMovie = [];
 // let newMovie2 = [];
@@ -523,29 +523,274 @@ const result = movie
 // console.log(circle2.area);
 
 //EX3
-function countOccurences(array,searchElement){
-    if (!Array.isArray[array]){
-        throw new Error('Invalid Array');
-        return;
+// function countOccurences(array,searchElement){
+//     if (!Array.isArray[array]){
+//         throw new Error('Invalid Array');
+//         return;
+//     }
+//     let newArray = [];
+//     for (let x of array){
+//         if (x === searchElement){
+//             newArray.push(x);
+//         }
+//     }
+//     let result = newArray.reduce(function(accumulator,currentvalue){
+//         return accumulator + currentvalue;
+//     },0);
+//     return result;
+// }
+// try{
+//     // let numbers2 = [1,2,3,4,1];
+//     let numbers2 = true;
+//     const count = countOccurences(numbers2,1);
+//     console.log(count);
+// }
+// catch(e){
+//     // alert(e);
+//     console.log(e.message);
+// }
+
+
+// ES6
+//MAPS
+// const question = new Map();
+// question.set('question','What is the largest continents in the world?');
+// question.set(1,'Asia');
+// question.set(2,'Africa');
+// question.set(3,'Australia');
+// question.set('correct',1);
+// question.set(true,'Correct Answer!');
+// question.set(false,'Wrong Answer!');
+
+// console.log(question.get('question'));
+// console.log(question.size);
+
+// if (question.has(3)){
+//     // question.delete(3);
+// }
+// question.clear();
+// question.forEach((key,value) => console.log(`This is ${key} and it set to ${value}`))
+
+// for (let [key,value] of question.entries()){
+//     if (typeof(key) === 'number'){
+//         console.log(`Answer ${key}: ${value}`);
+//     }
+//     // console.log(`This is ${key} and it set to ${value}`);
+// }
+// const ans = parseInt(prompt('Write the correct answer: '));
+// console.log(question.get(ans === question.get('correct')));
+
+//CLASSES
+// class Person {
+//     constructor(name,yearOfBirth,job){
+//         this.name = name;
+//         this.yearOfBirth = yearOfBirth;
+//         this.job = job;
+//     }
+//     calculateAge(){
+//         var age = new Date().getFullYear() - this.yearOfBirth;
+//         console.log(age);
+//     }
+//     static greeting(){
+//         console.log('Hry');
+//     }
+// };
+// let john = new Person('John',1990,'Teacher');
+// Person.greeting();
+// john.calculateAge();
+// class Athlete extends Person {
+//     constructor(name,yearOfBirth,job,olympicGames,medals){
+//         super(name,yearOfBirth,job);
+//         this.olympicGames = olympicGames;
+//         this.medals = medals;
+//     }
+//     wonMedals(){
+//         this.medals++;
+//         console.log(this.medals);
+//     }
+// };
+// let johnAthlete = new Athlete('John',1990,'Swimmer',3,10);
+// johnAthlete.wonMedals();
+// johnAthlete.calculateAge();
+
+//CODING CHALLENGE
+// class StreetPark {
+//     constructor(name,buildYear){
+//         this.name = name;
+//         this.buildYear = buildYear;
+//     }
+//     getName(){
+//         return this.name;
+//     }
+// };
+// class Park extends StreetPark{
+//     constructor(name,buildYear,numberOfTree,area){
+//         super(name,buildYear);
+//         this.numberOfTree = numberOfTree;
+//         this.area = area;
+//     }
+//     density(){
+//         console.log(`${this.name} has a tree density of ${this.numberOfTree/this.area} per square km`);
+//     }
+//     getAge(){
+//         var now = new Date().getFullYear();
+//         return now - this.buildYear;
+//     }
+//     getNumberOfTree(){
+//         if (this.numberOfTree > 1000){
+//             console.log(`${this.name} has more than 1000 trees.`)
+//         }
+//     }
+// };
+
+// class Street extends StreetPark{
+//     constructor(name,buildYear,length,size = 'normal'){
+//         super(name,buildYear);
+//         this.size = size;
+//         this.length = length;
+//     } 
+//     getLength(){
+//         return this.length;
+//     }
+//     getSize(){
+//         console.log(`${this.name}, built in ${this.buildYear}, is a ${this.size} street.`)
+//     }
+// };
+
+// // Park 
+// console.log('------PARK REPORTS------')
+
+// const park = new Map();
+// park.set('greenPark',new Park('Green Park',1990,1075,1));
+// park.set('nationalPark',new Park('National Park',1980,520,0.5));
+// park.set('oakPark',new Park('Oak Park',2002,2355,1.6));
+
+// let sumAge = 0;
+// for (let [key,value] of park){
+//     sumAge += value.getAge();
+// }
+// console.log(`Our ${park.size} parks have an everage age of ${sumAge/park.size} years`);
+// park.forEach((value) => value.density());
+// park.forEach((value) => value.getNumberOfTree());
+
+// // Street
+// console.log('------STREET REPORTS------')
+
+// const street = new Map();
+// street.set('oceanAvenue',new Street('Ocean Avenue',1976,6.5,'big'));
+// street.set('evergreenStreet',new Street('Evergreen Street',1996,9.5,'small'));
+// street.set('fourthStreet',new Street('4th Street',1992,4.6));
+// street.set('sunsetBoulevard',new Street('Sunset Boulevard',2000,6.7,'huge'));
+
+// let totalLength = 0;
+// for (let [key,value] of street){
+//     totalLength += value.getLength();
+// }
+// console.log(`Our ${street.size} streets has a total length of ${totalLength} km with an average of ${totalLength/street.size} km.`);
+// street.forEach((value) => value.getSize());
+
+//ASYNCHRONOUS JAVASCRIPT
+// function callRecipe(){
+//     setTimeout(() => {
+//         const recipeID = [114,239,405,445];
+//         console.log(recipeID);
+
+//         setTimeout(id => {
+//             const recipe = {title: 'Fresh tomato pasta', publisher: 'Aaron Paul'};
+//             console.log(`${id}: ${recipe.title}`);
+
+//             setTimeout(publisher => {
+//                 const recipe2 = {title: 'Italian Pizza', publisher: 'Aaron Paul'};
+//             },1500, recipe.publisher)
+//         },1500,recipeID[2])
+//     },1500);
+// }
+// callRecipe();
+
+//PROMISE
+// const getIDs = new Promise((resolve,reject) => {
+//     setTimeout(()=>{
+//         resolve([114,239,405,445]);
+//     },1500);
+// });
+
+// const getRecipe = recID => {
+//     return new Promise((resolve,reject)=>{
+//         setTimeout(id => {
+//             const recipe = {title: 'Fresh tomato pasta', publisher: 'Aaron Paul'};
+//             resolve(`${id}: ${recipe.title}`);
+//         },1500,recID[2]);
+//     });
+// }
+
+// const getRecipe2 = publisher => {
+//     return new Promise((resolve,reject)=>{
+//         setTimeout(publisher => {
+//             const recipe2 = {title: 'Italian Pizza', publisher: 'Aaron Paul'};
+//             resolve(`${publisher}: ${recipe2.title}`);
+//         },1500,publisher)
+//     });
+// }
+
+// getIDs
+// .then(IDs =>{
+//     console.log(IDs);
+//     return getRecipe(IDs);
+// }) 
+// .then(recipe => {
+//     console.log(recipe);
+//     return getRecipe2('Aaron Paul');
+// })
+// .then(recipe => {
+//     console.log(recipe);
+// })
+// .catch(error =>{
+//     console.log('Error!!!');
+// });
+
+//AsyncAwait => Run in the background anyway
+// async function getRecipeAW(){
+//     const IDs = await getIDs;
+//     console.log(IDs);
+//     const recipe = await getRecipe(IDs);
+//     console.log(recipe);
+//     const recipe2 = await getRecipe2('Aaron Paul');
+//     console.log(recipe2);
+
+//     return recipe;
+// }
+// getRecipeAW().then(result => console.log(`${result} is the best ever!`));
+
+//AJAX CALL WITH FETCH & PROMISES
+// function getWeather(woeid){
+//     fetch(`https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${woeid}/`)
+//     .then(result => {
+//     // console.log(result);
+//     return result.json();
+//     })
+//     .then (data => {
+//     // console.log(data);
+//     const today = data.consolidated_weather[0];
+//     console.log(`Temperature in ${data.title} stay between ${today.min_temp} and ${today.max_temp}.`);
+//     })
+//     .catch(error => {
+//     console.log(error);
+//     });
+// };
+// getWeather(2487956);
+// getWeather(1252431);
+
+//AJAX CALL WITH FETCH & ASYNC AWAIT
+async function getWeatherAW(woeid){
+    try {
+        const result = await fetch(`https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${woeid}/`);
+        const data = await result.json();
+        const today = data.consolidated_weather[0];
+        console.log(`Temperature in ${data.title} stay between ${today.min_temp} and ${today.max_temp}.`);
+        return data;    
+    } catch (error) {
+        alert(error);
     }
-    let newArray = [];
-    for (let x of array){
-        if (x === searchElement){
-            newArray.push(x);
-        }
-    }
-    let result = newArray.reduce(function(accumulator,currentvalue){
-        return accumulator + currentvalue;
-    },0);
-    return result;
-}
-try{
-    // let numbers2 = [1,2,3,4,1];
-    let numbers2 = true;
-    const count = countOccurences(numbers2,1);
-    console.log(count);
-}
-catch(e){
-    // alert(e);
-    console.log(e.message);
-}
+}; 
+getWeatherAW(2487956);
+getWeatherAW(1252431).then(data => console.log(data));
