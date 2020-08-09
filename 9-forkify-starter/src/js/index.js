@@ -1,5 +1,5 @@
 const { default: Search } = require("../models/Search");
-const { elements } = require("../views/base");
+const { elements, renderLoader, clearLoader } = require("../views/base");
 import * as searchView from "../views/searchView"
 
 /*GLOBAL STATE OF APP
@@ -21,12 +21,14 @@ const controllerSearch = async () => {
         //3. Prepare UI for results
         searchView.clearInput();
         searchView.clearResults();
+        renderLoader(elements.searchResults);
 
         //4. Search for recipes
         await state.search.getResult();
 
         //5. Render results to UI
         // console.log(state.search.recipe);
+        clearLoader();
         searchView.renderResults(state.search.recipe);
     }
 }
