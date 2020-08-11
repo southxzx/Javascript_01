@@ -1,6 +1,7 @@
 const { default: Search } = require("../models/Search");
 const { elements, renderLoader, clearLoader } = require("../views/base");
 import * as searchView from "../views/searchView"
+import * as recipeView from "../views/recipeView"
 import Recipe from "../models/Recipe";
 
 
@@ -65,8 +66,13 @@ const controllerRecipe = async () => {
     console.log(id);
 
     if(id){
+        
+        //Highlight selector of each search item
+        if(state.search) searchView.highlightSelected(id);
 
         //1. Prepare for the UI changes
+        renderLoader(elements.recipe);
+        recipeView.clearRecipe();
 
         //2.Create a new recipe obj
         state.recipe = new Recipe(id);
@@ -74,11 +80,15 @@ const controllerRecipe = async () => {
         try {
             //3. Get recipe data
             await state.recipe.getRecipe();
+            await state.recipe.parseIngredients();
 
             //4. Calculate servings + time
 
             //5. Render recipe
+            clearLoader();
+            recipeView.renderRecipe(state.recipe);
             console.log(state.recipe);
+
         } catch (error) {
             alert('Error processing recipe');
         }
@@ -89,5 +99,22 @@ const controllerRecipe = async () => {
 // window.addEventListener('load', controllerRecipe)
 
 ['hashchange','load'].forEach(e => window.addEventListener(e,controllerRecipe));
+
+//Handling recipe button + -
+elements.recipe.addEventListener('click', (e) => {
+    if(e.target.matches('.btn-dec, .btn-dec *')){
+        //Decrease button
+        if (state.recipe.serving > 1){
+            state.recipe.updateServings('dec');
+            recipeView.updateServingsIngredients(state.recipe);
+        }
+
+    } else if (e.target.matches('.btn-inc, .btn-inc *')){
+        // Increase button
+        state.recipe.updateServings('inc');
+        recipeView.updateServingsIngredients(state.recipe);
+
+    }
+})
 
 
