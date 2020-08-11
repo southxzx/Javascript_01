@@ -2,10 +2,12 @@ const { default: Search } = require("../models/Search");
 const { elements, renderLoader, clearLoader } = require("../views/base");
 import * as searchView from "../views/searchView"
 import * as recipeView from "../views/recipeView"
+import * as listView from "../views/listView"
 import Recipe from "../models/Recipe";
-
+import List from "../models/List";
 
 const state = {};
+window.state = state;
 
 /* ----------------------------------------SEARCH------------------------------------- */
 
@@ -100,6 +102,42 @@ const controllerRecipe = async () => {
 
 ['hashchange','load'].forEach(e => window.addEventListener(e,controllerRecipe));
 
+
+/* ----------------------------------------SHOPPING------------------------------------- */
+
+const controllerList = () => {
+    // Create a new list if it's not yet
+    if(!state.list) state.list = new List();
+
+    // Add each ingredient to the list & UI
+    state.recipe.ingredients.forEach(el => {
+        const item = state.list.addItem(el.count, el.unit, el.ingredient);
+        listView.renderItem(item);
+    })
+}
+
+// Handle delete and update list shopping event
+elements.shoppingList.addEventListener('click', e => {
+
+    //User click to wherever in the item, it will recognize this class
+    const id = e.target.closest('.shopping__item').dataset.itemid;
+
+    //Delete button
+    if (e.target.matches('.shopping__delete, .shopping__delete *')){
+        // Delete from the state
+        state.list.deleteItem(id);
+
+        // Delete from the UI
+        listView.deleteItem(id);
+
+    //Update count  
+    } else if (e.target.matches('.shopping__count-value')){
+        const val = parseFloat(e.target.value, 10);
+        state.list.updateCount(id,val);
+    }
+})
+
+
 //Handling recipe button + -
 elements.recipe.addEventListener('click', (e) => {
     if(e.target.matches('.btn-dec, .btn-dec *')){
@@ -114,7 +152,8 @@ elements.recipe.addEventListener('click', (e) => {
         state.recipe.updateServings('inc');
         recipeView.updateServingsIngredients(state.recipe);
 
+    } else if (e.target.matches('.recipe__btn, .recipe__btn *')){
+        // Add to cart button
+        controllerList();
     }
 })
-
-
