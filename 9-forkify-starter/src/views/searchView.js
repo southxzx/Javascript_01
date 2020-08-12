@@ -22,7 +22,7 @@ export const highlightSelected = (id) => {
     document.querySelector(`a[href="#${id}"]`).classList.add('results__link--active');
 };
 
-const limitRecipeTitle = (title, limit = 17) => {
+export const limitRecipeTitle = (title, limit = 17) => {
     const title2 = [];
     if (title.length > limit){
         title.split(' ').reduce((acc,cur) => {
